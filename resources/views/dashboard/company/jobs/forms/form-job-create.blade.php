@@ -48,7 +48,7 @@
         <div class="col">
             <div class="form-group">
                 <label>Job Salary <small>(optional)</small></label>
-                <select class="js-example-basic-multiple form-control" name="salary[]" multiple="multiple">
+                <select class="js-example-basic-multiple form-control" name="job_salary[]" multiple="multiple">
                     {{--from database--}}
                     @foreach($salaries as $salary)
                         <option value="{{$salary-> id}}"> {{$salary->salary_range}}</option>
@@ -60,7 +60,7 @@
         <div class="col">
             <div class="form-group">
                 <label>Job Career <small>(optional)</small></label>
-                <select class="js-example-basic-multiple form-control" name="job_career[]" multiple="multiple">
+                <select class="js-example-basic-multiple form-control" name="job_career_levels[]" multiple="multiple">
                     {{--from database--}}
                     @foreach($career_levels as $career_level)
                         <option value="{{$career_level-> id}}"> {{$career_level->name}}</option>

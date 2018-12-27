@@ -24,7 +24,7 @@ class CategoriesSeeder extends Seeder
         {
             Category::Create(
                 [
-                    'name' => $category,
+                    'name' => str_slug($category),
                     'slug' => $category,
                     'user_id'=> 1
                 ]

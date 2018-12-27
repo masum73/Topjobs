@@ -7,7 +7,12 @@ use App\Models\Category;
 use App\Models\Experience;
 use App\Models\Industry;
 use App\Models\Job;
+use App\Models\Job_Career_Level;
 use App\Models\Job_Category;
+use App\Models\Job_Experience;
+use App\Models\Job_Industry;
+use App\Models\Job_Qualification;
+use App\Models\Job_Salary;
 use App\Models\Job_Type;
 use App\Models\Qualification;
 use App\Models\Salary;
@@ -48,6 +53,7 @@ class JobController extends Controller
 
         );
 
+        //creating job categories
         foreach ($request->job_categories as $job_category)
         {
             Job_Category::Create([
@@ -56,7 +62,55 @@ class JobController extends Controller
                 'category_id' => $job_category
             ]);
         }
+        //creating job salaries
+        foreach ($request->job_salary as $job_salary)
+        {
+            Job_Salary::Create([
 
+                'job_id' =>  $job->id,
+                'salary_id' => $job_salary
+            ]);
+        }
+
+        //creating job experiences
+        foreach ($request->job_experience as $job_experience)
+        {
+            Job_Experience::Create([
+
+                'job_id' =>  $job->id,
+                'experiences_id' => $job_experience
+            ]);
+        }
+
+        //creating job industries
+        foreach ($request->job_industry as $job_industry)
+        {
+            Job_Industry::Create([
+
+                'job_id' =>  $job->id,
+                'industries_id' => $job_industry
+            ]);
+        }
+
+        //creating job career_levels
+        foreach ($request->job_career_levels as $job_career_level)
+        {
+            Job_Career_Level::Create([
+
+                'job_id' =>  $job->id,
+                'career_levels_id' => $job_career_level
+            ]);
+        }
+
+        //creating job career_levels
+        foreach ($request->job_qualification as $job_qualification)
+        {
+            Job_Qualification::Create([
+
+                'job_id' =>  $job->id,
+                'qualifications_id' => $job_qualification
+            ]);
+        }
         return redirect()->home();
     }
 }

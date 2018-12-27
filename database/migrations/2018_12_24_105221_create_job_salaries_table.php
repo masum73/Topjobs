@@ -15,6 +15,8 @@ class CreateJobSalariesTable extends Migration
     {
         Schema::create('job_salaries', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('job_id')->unsigned();
+            $table->integer('salary_id')->unsigned();
             $table->timestamps();
         });
     }

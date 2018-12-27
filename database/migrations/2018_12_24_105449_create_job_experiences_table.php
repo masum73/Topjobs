@@ -15,6 +15,8 @@ class CreateJobExperiencesTable extends Migration
     {
         Schema::create('job_experiences', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('job_id')->unsigned();
+            $table->integer('experiences_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -14,9 +14,11 @@ class WebsiteController extends Controller
     {
         $now = Carbon::now();
 
-        $categories = Category::latest()->get();
-
         $jobs = Job::all();
+
+        $feature_jobs = Job::latest()->Take(6)->get();
+
+        $categories = Category::latest()->Take(8)->get();
 
         $count = 0;
 
@@ -31,7 +33,7 @@ class WebsiteController extends Controller
             }
         }
 
-        $compact = compact('jobs' , 'count','categories');
+        $compact = compact('jobs' , 'count','categories','feature_jobs');
 
         return view('website.index' , $compact);
     }

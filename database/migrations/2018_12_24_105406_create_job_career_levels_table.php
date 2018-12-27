@@ -15,6 +15,8 @@ class CreateJobCareerLevelsTable extends Migration
     {
         Schema::create('job_career_levels', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('job_id')->unsigned();
+            $table->integer('career_levels_id')->unsigned();
             $table->timestamps();
         });
     }

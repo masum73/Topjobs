@@ -15,6 +15,8 @@ class CreateJobIndustriesTable extends Migration
     {
         Schema::create('job_industries', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('job_id')->unsigned();
+            $table->integer('industries_id')->unsigned();
             $table->timestamps();
         });
     }

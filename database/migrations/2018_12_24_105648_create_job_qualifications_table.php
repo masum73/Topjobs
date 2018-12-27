@@ -15,6 +15,8 @@ class CreateJobQualificationsTable extends Migration
     {
         Schema::create('job_qualifications', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('job_id')->unsigned();
+            $table->integer('qualifications_id')->unsigned();
             $table->timestamps();
         });
     }

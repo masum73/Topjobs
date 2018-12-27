@@ -13,4 +13,8 @@ class Job extends Model
     {
         return $this->belongsTo(Job_Type::class,'job_type_id','id');
     }
+    public function getUserInfo()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

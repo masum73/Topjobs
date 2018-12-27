@@ -22,6 +22,11 @@
                 @endforeach
             </div>
 
+            <a class="btn btn-primary" href="#" role="button">Browse all Category</a>
+
+            <br>
+            <br>
+
         @endforeach
     </div>
 </div>
